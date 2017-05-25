@@ -5,7 +5,7 @@
 
 #include <vector>
 #include <Component.h>
-#include <Pipe.h>
+#include <std::shared_ptr<Pipe>.h>
 
 namespace components.base
 
@@ -15,7 +15,7 @@ private:
 
     unsigned int m_nbInput;
 
-    std::vector<Pipe> m_input;
+    std::vector<std::shared_ptr<Pipe>> m_input;
 
 public:
 
@@ -23,9 +23,9 @@ public:
 
     unsigned int nbInput() const;
 
-    Pipe getInput(unsigned int noInput) const;
+    std::shared_ptr<Pipe> getInput(unsigned int noInput) const;
 
-    void connectInput(const Pipe p,unsigned int noInput);
+    void connectInput(const std::shared_ptr<Pipe> p,unsigned int noInput);
 
     bool thereAreSamples() const;
 
