@@ -7,15 +7,13 @@
 #include <Component.h>
 #include <Pipe.h>
 
-namespace components.base
-
-class Producer {
+class Producer : public virtual Component {
 
 private:
 
     unsigned int m_nbOutput;
 
-    std::vector<Pipe> m_output;
+    std::vector<std::shared_ptr<Pipe>> m_output;
 
 public:
 
@@ -23,7 +21,7 @@ public:
 
     unsigned int nbOutput() const;
 
-    Pipe getOutput(unsigned int noOutput) const;
+    std::shared_ptr<Pipe> getOutput(unsigned int noOutput) const;
 
     virtual void compute() = 0;
 
@@ -31,9 +29,9 @@ protected:
 
     Producer(unsigned int nbOutput = 1);
 
-    void connectOutput(const Pipe p,unsigned int noOutput);
+    void connectOutput(const std::shared_ptr<Pipe> p,unsigned int noOutput);
 
-    void write(unsigned int noOutput);
+    void write(unsigned int noOutput, double value);
 
 };
 
