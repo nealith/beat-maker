@@ -5,7 +5,7 @@
 
 #include <vector>
 #include <Component.h>
-#include <std::shared_ptr<Pipe>.h>
+#include <Pipe.h>
 
 namespace components.base
 
