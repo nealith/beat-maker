@@ -5,11 +5,11 @@
 
 namespace components.base
 
-class component {
+class Component {
 
 public:
 
-    virtual ~component(){}
+    virtual ~Component(){}
 
     virtual void compute() = 0;
 
