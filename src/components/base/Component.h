@@ -3,7 +3,7 @@
 #ifndef COMPONENT_H
 #define COMPONENT_H
 
-namespace components.base
+#include <memory>
 
 class Component {
 
