@@ -25,12 +25,12 @@ bool Consumer::thereAreSamples() const{
     return ret;
 }
 
-Consumer::Consumer(unsigned int nbInput = 1):
+Consumer::Consumer(unsigned int nbInput):
     m_nbInput(nbInput),m_input(nbInput,std::shared_ptr<Pipe>(NULL)){
-
+    assert("nbInput must be >= 1" && 0 < nbInput);
 }
 
 double Consumer::read(unsigned int noInput){
     assert("This input doesn't exist" && noInput < m_nbInput);
-    return m_input[nbInput]->extract();
+    return m_input[noInput]->extract();
 }

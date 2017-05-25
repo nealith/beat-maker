@@ -7,9 +7,7 @@
 #include <Component.h>
 #include <Pipe.h>
 
-namespace components.base
-
-class Consumer {
+class Consumer : public virtual Component {
 
 private:
 
